@@ -46,6 +46,10 @@ variable "database_subnet_cidrs" {
     }
 }
 
+variable "sub_domain_names" {
+  default = ["backend", "database", "expense"]
+}
+
 variable "domain_name" {
     default = "nareshtransportservices.online"
 }

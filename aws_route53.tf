@@ -1,14 +1,9 @@
-# Route53 Hosted Zone (already should exist for nareshtransportservices.online)
-# If it already exists, import it or just reference it here:
-data "aws_route53_zone" "main" {
-  name         = "nareshtransportservices.online"
-  private_zone = false
-}
+
 
 # Backend Record (Private A Record)
 resource "aws_route53_record" "backend" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = "backend.nareshtransportservices.online"
+  name    = "${var.sub_domain_names[0]}.${var.domain_name}" 
   type    = "A"
   ttl     = 300
   records = ["10.0.2.63"]
@@ -17,7 +12,7 @@ resource "aws_route53_record" "backend" {
 # Database Record (Private A Record)
 resource "aws_route53_record" "database" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = "database.nareshtransportservices.online"
+  name    = "${var.sub_domain_names[1]}.${var.domain_name}"
   type    = "A"
   ttl     = 300
   records = ["10.0.1.214"]
@@ -26,7 +21,7 @@ resource "aws_route53_record" "database" {
 # Expense Record (Alias → ALB)
 resource "aws_route53_record" "expense" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = "expense.nareshtransportservices.online"
+  name    = "${var.sub_domain_names[2]}.${var.domain_name}"
   type    = "A"
 
   alias {

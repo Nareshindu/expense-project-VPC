@@ -18,3 +18,11 @@ data "aws_ami" "rhel9_devops" {
 
   owners = ["973714476881"] 
 }
+
+
+# Route53 Hosted Zone (already should exist for nareshtransportservices.online)
+# If it already exists, import it or just reference it here:
+data "aws_route53_zone" "main" {
+  name         = "nareshtransportservices.online"
+  private_zone = false
+}
