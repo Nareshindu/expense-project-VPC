@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/entries")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://expense-frontend:3000")
 public class EntryController {
     @Autowired
     private EntryRepository entryRepository;
