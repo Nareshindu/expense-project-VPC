@@ -1,13 +1,13 @@
-# Base Image
+# Base image
 FROM postgres:13
 
-# Set environment variables
+# Set default postgres user (admin)
 ENV POSTGRES_USER=expense
 ENV POSTGRES_PASSWORD=Admin@123
-ENV POSTGRES_DB=expensetracker
+ENV POSTGRES_DB=postgres
 
-# Copy custom script into container
+# Copy init SQL
 COPY permissions.sql /docker-entrypoint-initdb.d/
 
-# Expose PostgreSQL Port
+# Expose PostgreSQL port
 EXPOSE 5432
