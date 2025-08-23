@@ -2,10 +2,10 @@
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 
 WORKDIR /app
-COPY expense-backend/demo/pom.xml .
+COPY pom.xml .
 RUN mvn dependency:go-offline
 
-COPY expense-backend/demo/src ./src
+COPY src ./src
 RUN mvn clean package
 
 # ===== Stage 2: Runtime =====
