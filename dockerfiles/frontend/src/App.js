@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { exportEntriesToPDF } from './exportPdf';
 
-const API_URL = 'http://54.224.231.100/api/entries';
+const API_URL = "http://54.89.91.77/api/entries";
+
 
 function App() {
 
