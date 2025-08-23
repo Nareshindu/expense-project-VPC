@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 # Step 4: Copy source code
-COPY  expense-frontend/* .
+COPY * .
 
 # Step 5: Build React app
 RUN npm run build
