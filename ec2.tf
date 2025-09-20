@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami           = data.aws_ami.rhel9_devops.id
   instance_type = "t3.micro"
-  subnet_id     = aws_subnet.private[0].id
+  subnet_id     = aws_subnet.public[0].id
   vpc_security_group_ids = [aws_security_group.frontend_sg.id]
 
 
