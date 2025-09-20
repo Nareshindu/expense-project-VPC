@@ -7,10 +7,10 @@ output "ami_id" {
   
 }
 
-# output "alb_dns_name" {
-#   value = aws_lb.app_alb.dns_name
+output "alb_dns_name" {
+  value = aws_lb.app_alb.dns_name
   
-# }
+}
 
 output "database_private-IP" {
   value = aws_instance.database.private_ip 

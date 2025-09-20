@@ -50,6 +50,6 @@ variable "sub_domain_names" {
   default = ["backend", "database", "expense"]
 }
 
-# variable "domain_name" {
-#     default = "nareshtransportservices.online"
-# }
+variable "domain_name" {
+    default = "nareshtransportservices.online"
+}
